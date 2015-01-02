@@ -43,6 +43,50 @@
                     </includes>
                 </configuration>
             </plugin>
+<plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>sonar-maven-plugin</artifactId>
+          <version>2.4</version>
+		    <!-- <executions>
+			  <execution>
+				<phase>verify</phase>
+				<goals>
+				<goal>package</goal>
+				</goals>
+			</execution>
+		</executions>-->
+        </plugin>
+		  <plugin>
+			<groupId>com.atlassian.maven.plugins</groupId>
+			<artifactId>maven-clover2-plugin</artifactId>
+			<version>3.1.12</version>
+			<configuration>
+				<encoding>UTF-8</encoding>
+				<licence>
+					<![CDATA[PpOnrjlpFewlfppRpEgUBpPbqOQJCUXjxddDPtIMwGJDGG
+					mi2KYwlOOX3WDaavVOPbBQRA2Ktgp87Kv<XxIdM4P76DSK
+					QMRrXSqOOqMmOmnNoNrtxoMpPOnooOnRRpvvWUWVTVwsOn
+					mnmUUnpttrorsmmmmmUUnpttrorsmmmmmUU3vYXdbUUn]]>
+				</licence>
+				<!--<targetPercentage>85%</targetPercentage>-->
+				<generatePdf>true</generatePdf>
+				<generateHtml>true</generateHtml>
+				<generateXml>true</generateXml>
+				<generateHistorical>true</generateHistorical>
+			</configuration>
+			<executions>
+			  <execution>
+			    <id>main</id>
+			    <phase>verify</phase>
+			    <goals>
+			      <goal>instrument</goal>
+			      <goal>aggregate</goal>
+			      <goal>clover</goal>
+			     </goals>
+			   </execution>
+			</executions>
+
+		</plugin>
         </plugins>
     </build>
 </project>
